@@ -39,7 +39,7 @@ def _aggregate_to_periods(sales:pd.DataFrame, daily_cols:list) -> pd.DataFrame:
         A DataFrame with the aggregated demand
     """
     # Specify the periodicity
-    days_per_period = 30 # Setting a month as a standard period (can be changed to a week)
+    days_per_period = 30 # Setting a month as a standard period
 
     daily_values = sales[daily_cols].values # converts the DataFrame into a numpy array
     n_skus, n_days = daily_values.shape
@@ -62,3 +62,4 @@ if __name__ == "__main__":
     path = "data/files/sales_train_validation.csv"
     daily_cols = load_file_m5(path)
     print(daily_cols.shape)
+    print(daily_cols.head())

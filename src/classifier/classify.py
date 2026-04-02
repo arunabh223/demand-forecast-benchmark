@@ -90,10 +90,3 @@ def classify_demand(adi: float, cv_squared:float) -> str:
     
     else:
         return "lumpy"
-
-# Function to test out the code
-def main():
-    pass
-    
-if __name__ == "__main__":
-    main()
