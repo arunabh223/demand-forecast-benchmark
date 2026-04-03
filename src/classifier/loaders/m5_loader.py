@@ -61,5 +61,6 @@ def _aggregate_to_periods(sales:pd.DataFrame, daily_cols:list) -> pd.DataFrame:
 if __name__ == "__main__":
     path = "data/files/sales_train_validation.csv"
     daily_cols = load_file_m5(path)
-    print(daily_cols.shape)
+    # print(daily_cols.shape)
     print(daily_cols.head())
+    daily_cols.to_csv("data/results/aggregated_data.csv")

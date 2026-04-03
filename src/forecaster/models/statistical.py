@@ -9,10 +9,10 @@ Registry for all statistical forecasting models.
 
 class BaseForecaster:
     def fit(self, series:np.ndarray) -> "BaseForecaster":
-        return NotImplementedError
+        raise NotImplementedError
     
     def predict(self, h:int) -> np.ndarray:
-        return NotImplementedError
+        raise NotImplementedError
     
 class ETSModel(BaseForecaster):
     def __init__(self, trend:Optional[str]="add", seasonal:Optional[str]="add", seasonal_periods:int=12):
@@ -34,7 +34,7 @@ class ETSModel(BaseForecaster):
     
     def predict(self, h:int) -> np.ndarray:
         fc = self._model.forecast(h)
-        return fc.values
+        return np.asarray(fc)
     
 # Model registry
 
